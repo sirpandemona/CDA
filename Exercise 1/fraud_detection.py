@@ -21,14 +21,14 @@
 
 # In[7]:
 
-get_ipython().magic(u'matplotlib inline')
+#get_ipython().magic(u'matplotlib inline')
 import datetime
 import time
 import matplotlib.pyplot as plt
 from sklearn import neighbors
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import classification_report
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from operator import itemgetter
 from itertools import groupby
@@ -94,17 +94,18 @@ def aggregate_mean(before_aggregate):
         #print after_aggregate[0]
         #print before_aggregate[0]
     return after_aggregate
-if __name__ == "__main__":
-    src = '/Users/Qlin/Documents/TA/fraud_credit_card/data_for_student_case.csv'
+if True:
+    path = '/Users/vasco/Documents/GitHub/CDA/Exercise 1/'
+    src = path+'data_for_student_case.csv'
     ah = open(src, 'r')
     x = []#contains features
     y = []#contains labels
     data = []
     color = []
     (issuercountry_set, txvariantcode_set, currencycode_set, shoppercountry_set, interaction_set,
-    verification_set, accountcode_set, mail_id_set, ip_id_set, card_id_set) = [set() for _ in xrange(10)]
+    verification_set, accountcode_set, mail_id_set, ip_id_set, card_id_set) = [set() for _ in range(10)]
     (issuercountry_dict, txvariantcode_dict, currencycode_dict, shoppercountry_dict, interaction_dict,
-    verification_dict, accountcode_dict, mail_id_dict, ip_id_dict, card_id_dict) = [{} for _ in xrange(10)]
+    verification_dict, accountcode_dict, mail_id_dict, ip_id_dict, card_id_dict) = [{} for _ in range(10)]
     #label_set
     #cvcresponse_set = set()
     ah.readline()#skip first line
@@ -132,7 +133,7 @@ if __name__ == "__main__":
             label = 0#label save
         verification = line_ah.strip().split(',')[10]#shopper provide CVC code or not
         verification_set.add(verification)
-        cvcresponse = line_ah.strip().split(',')[11]#0 = Unknown, 1=Match, 2=No Match, 3-6=Not checked
+        cvcresponse = int(line_ah.strip().split(',')[11])#0 = Unknown, 1=Match, 2=No Match, 3-6=Not checked
         if cvcresponse > 2:
             cvcresponse = 3
         year_info = datetime.datetime.strptime(line_ah.strip().split(',')[12],'%Y-%m-%d %H:%M:%S').year
@@ -199,7 +200,7 @@ for item in list(verification_set):
     verification_dict[item] = list(verification_set).index(item)
 for item in list(accountcode_set):
     accountcode_dict[item] = list(accountcode_set).index(item)
-print len(list(card_id_set))
+#print len(list(card_id_set))
 #for item in list(card_id_set):
 #    card_id_dict[item] = list(card_id_set).index(item)
 '''modify categorial feature to number in data set'''
@@ -215,8 +216,8 @@ for item in x:
 #x_mean = []
 #x_mean = aggregate_mean(x);
 x_mean = x;
-des = '/Users/Qlin/Documents/TA/fraud_credit_card/original_data.csv'
-des1 = '/Users/Qlin/Documents/TA/fraud_credit_card/aggregate_data.csv'
+des = path+'original_data.csv'
+des1 = path+'aggregate_data.csv'
 ch_dfa = open(des,'w')
 #ch_dfa.write('txid,bookingdate,issuercountrycode,txvariantcode,bin,amount,'+
 #             'currencycode,shoppercountrycode,shopperinteraction,simple_journal,'+
@@ -240,7 +241,7 @@ x_train, x_test, y_train, y_test = train_test_split(usx, usy, test_size = 0.2)#t
 clf = neighbors.KNeighborsClassifier(algorithm = 'kd_tree')
 clf.fit(x_train, y_train)
 y_predict = clf.predict(x_test)
-for i in xrange(len(y_predict)):
+for i in range(len(y_predict)):
     if y_test[i]==1 and y_predict[i]==1:
         TP += 1
     if y_test[i]==0 and y_predict[i]==1:
@@ -249,10 +250,10 @@ for i in xrange(len(y_predict)):
         FN += 1
     if y_test[i]==0 and y_predict[i]==0:
         TN += 1
-print 'TP: '+ str(TP)
-print 'FP: '+ str(FP)
-print 'FN: '+ str(FN)
-print 'TN: '+ str(TN)
+#print 'TP: '+ str(TP)
+#print 'FP: '+ str(FP)
+#print 'FN: '+ str(FN)
+#print 'TN: '+ str(TN)
 #print confusion_matrix(y_test, answear) watch out the element in confusion matrix
 precision, recall, thresholds = precision_recall_curve(y_test, y_predict)
 predict_proba = clf.predict_proba(x_test)#the probability of each smple labelled to positive or negative
