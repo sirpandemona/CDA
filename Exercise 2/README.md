@@ -14,4 +14,4 @@ If you are using `pip`, run `pip install -r requirements.txt` to install librari
 1. Start Jupyter notebook: `jupyter notebook`.
 2. See familiarization task in `Familiarization.ipynb`
 3. See ARMA task in `ARMA.ipynb`, figures and log files could be found under `/log` and `/fig` folder.
-4. See Discrete models and PCA tasks in `Exploration.ipynb`
+4. See Discrete models and PCA tasks in `PCA & Discretization.ipynb`
