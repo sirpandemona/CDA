@@ -1,0 +1,35 @@
+Feature: L_T1, threshold: 4.181
+Detected: 945 947
+TP: count = 2, list = 945 947
+FP: count = 0, list = 
+FN: count = 405
+precision = 0.999500, recall = 0.004914
+
+Feature: L_T2, threshold: 625.769
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
+Feature: L_T3, threshold: 3.310
+Detected: 339 496 712 1072 1289
+TP: count = 2, list = 339 1289
+FP: count = 3, list = 496 712 1072
+FN: count = 405
+precision = 0.399920, recall = 0.004914
+
+Feature: L_T4, threshold: 5.828
+Detected: 569
+TP: count = 0, list = 
+FP: count = 1, list = 569
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
+Feature: L_T7, threshold: 7.227
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+

@@ -1,0 +1,7 @@
+Feature: F_V2, threshold: 404.334
+Detected: 1849 2078
+TP: count = 0, list = 
+FP: count = 2, list = 1849 2078
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+

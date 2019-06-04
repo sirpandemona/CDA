@@ -1,0 +1,56 @@
+Feature: F_PU1, threshold: 140.313
+Detected: 45 239 946 947 948 949 950 951 952 953 954 955 1044 1334 1489 1548 1655 1775
+TP: count = 10, list = 946 947 948 949 950 951 952 953 954 955
+FP: count = 8, list = 45 239 1044 1334 1489 1548 1655 1775
+FN: count = 397
+precision = 0.555525, recall = 0.024570
+
+Feature: F_PU2, threshold: 178.712
+Detected: 32 82 175 270 381 421 468 522 583 654 698 752 856 1027 1139 1196 1281 1429 1476 1591 1644 1700 1812 1863 2009
+TP: count = 4, list = 654 1281 1591 1644
+FP: count = 21, list = 32 82 175 270 381 421 468 522 583 698 752 856 1027 1139 1196 1429 1476 1700 1812 1863 2009
+FN: count = 403
+precision = 0.159994, recall = 0.009828
+
+Feature: F_PU4, threshold: 76.337
+Detected: 246 1107 1109 1254 1373
+TP: count = 1, list = 1254
+FP: count = 4, list = 246 1107 1109 1373
+FN: count = 406
+precision = 0.199960, recall = 0.002457
+
+Feature: F_PU6, threshold: 62.090
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
+Feature: F_PU7, threshold: 2550.866
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
+Feature: F_PU8, threshold: 500.378
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
+Feature: F_PU10, threshold: 61.694
+Detected: 43 861 942 1531 1579 1627 1758 1862
+TP: count = 3, list = 942 1579 1627
+FP: count = 5, list = 43 861 1531 1758 1862
+FN: count = 404
+precision = 0.374953, recall = 0.007371
+
+Feature: F_PU11, threshold: 39.663
+Detected: 
+TP: count = 0, list = 
+FP: count = 0, list = 
+FN: count = 407
+precision = 0.000000, recall = 0.000000
+
