@@ -11,8 +11,8 @@ For `Anaconda` user:
 If you are using `pip`, run `pip install -r requirements.txt` to install libraries.
 
 ### Run the result
-1. Start Jupyter notebook: `jupyter notebook`.
-2. See Sampling task in sampling.ipynb'
-3. See Sketching task in 'sketching.ipynb'
-4. See Flow data discretization task and Botnet profiling task in 'discretization.ipynb'
-5. See Flow classification task in 'flow_classification.ipynb'
+1. Start Jupyter notebook: `jupyter notebook`
+2. See Sampling task in `sampling.ipynb`
+3. See Sketching task in `sketching.ipynb`
+4. See Flow data discretization task and Botnet profiling task in `discretization.ipynb`
+5. See Flow classification task in `flow_classification.ipynb`
